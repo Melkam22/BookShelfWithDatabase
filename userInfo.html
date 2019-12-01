@@ -1,0 +1,110 @@
+<html>
+  <header>
+    <style>
+      body {
+        background: rgba(74, 84, 93, 0.5);
+      }
+      h1 {
+        text-align: center;
+      }
+      form {
+        text-align: center;
+      }
+      input {
+        height: 30px;
+        width: 20%;
+      }
+      .btn {
+        background: rgba(163, 12, 191, 0.5);
+        border: none;
+      }
+    </style>
+  </header>
+  <body>
+    <h1>SignUp form</h1>
+    <div id="full-info">
+      <form method="POST" action="insertInfo">
+        <div>Author Name:</div>
+        <input
+          type="text"
+          name="authorname"
+          id="authorname"
+          placeholder="author name here"
+        />
+
+        <div>Book Title:</div>
+        <input
+          type="text"
+          name="booktitle"
+          id="booktitle"
+          placeholder="book title here"
+        />
+
+        <div>Publication Year</div>
+        <input
+          type="number"
+          name="publicationyear"
+          id="publicationyear"
+          placeholder="year of publication"
+        />
+
+        <div>Page Size</div>
+        <input
+          type="number"
+          name="pagesize"
+          id="pagesize"
+          placeholder="size of page if known"
+        />
+
+        <div>Printed In</div>
+        <input
+          type="text"
+          name="printedin"
+          id="printedin"
+          placeholder="country, city or printing company"
+        />
+
+        <div>Original Language</div>
+        <input
+          type="text"
+          name="originallanguage"
+          id="originallanguage"
+          placeholder="translated or not"
+        />
+
+        <div>Book Lend to :</div>
+        <input
+          type="text"
+          name="booklend"
+          id="booklend"
+          placeholder="borrowed by"
+        />
+        <div>Book borrowed in :</div>
+        <input
+          type="number"
+          name="lenddate"
+          id="lenddate"
+          placeholder="borrowed at ..."
+        />
+
+        <div>Book Code</div>
+        <input type="text" name="bookcode" id="bookcode" />
+
+        <input type="submit" value="submit" class="btn" />
+      </form>
+    </div>
+
+    <h1>Login & check if the book is available</h1>
+    <form method="POST" action="searchInfo" id="check-info">
+      <div>Book Code:</div>
+      <input
+        type="text"
+        name="bookcode"
+        id="bookcode"
+        placeholder="insert book code & get the full info."
+      />
+      <input type="submit" value="submit" class="btn" /> <br />
+      <div id="check-status">Show full information</div>
+    </form>
+  </body>
+</html>
