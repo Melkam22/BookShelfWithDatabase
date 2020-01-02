@@ -1,4 +1,8 @@
 <html>
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
   <header>
     <style>
       body {
@@ -17,6 +21,25 @@
       .btn {
         background: rgba(163, 12, 191, 0.5);
         border: none;
+      }
+      #eye {
+        position: absolute;
+        margin-left: -25%;
+        padding-top: 5px;
+        cursor: pointer;
+      }
+      #eye.active {
+        color: blue;
+      }
+      /* second show-hide function */
+      #eye2 {
+        position: absolute;
+        margin-left: -4%;
+        padding-top: 5px;
+        cursor: pointer;
+      }
+      #eye2.active {
+        color: blue;
       }
     </style>
   </header>
@@ -88,9 +111,9 @@
         />
 
         <div>Book Code</div>
-        <input type="text" name="bookcode" id="bookcode" />
-
+        <input type="password" name="bookcode" id="bookCode" />
         <input type="submit" value="submit" class="btn" />
+        <i class="fa fa-eye-slash" aria-hidden="true" id="eye"></i>
       </form>
     </div>
 
@@ -98,13 +121,36 @@
     <form method="POST" action="searchInfo" id="check-info">
       <div>Book Code:</div>
       <input
-        type="text"
+        type="password"
         name="bookcode"
-        id="bookcode"
+        id="bookCode2"
         placeholder="insert book code & get the full info."
       />
+      <i class="fa fa-eye-slash" aria-hidden="true" id="eye2"></i>
       <input type="submit" value="submit" class="btn" /> <br />
       <div id="check-status">Show full information</div>
     </form>
+    <script>
+      /* hide & show password function1 */
+      let hideShow = document.getElementById("bookCode");
+      let myEye = document.getElementById("eye");
+      myEye.addEventListener("click", toggleFunction);
+      function toggleFunction() {
+        myEye.classList.toggle("active");
+        hideShow.type == "password"
+          ? (hideShow.type = "text")
+          : (hideShow.type = "password");
+      }
+      /* hide & show password function2 */
+      let hideShow2 = document.getElementById("bookCode2");
+      let myEye2 = document.getElementById("eye2");
+      myEye2.addEventListener("click", toggleFunction2);
+      function toggleFunction2() {
+        myEye2.classList.toggle("active");
+        hideShow2.type == "password"
+          ? (hideShow2.type = "text")
+          : (hideShow2.type = "password");
+      }
+    </script>
   </body>
 </html>
